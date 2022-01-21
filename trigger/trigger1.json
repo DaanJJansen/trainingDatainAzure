@@ -1,0 +1,26 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "copyPipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/input/blobs/input/",
+			"blobPathEndsWith": "emptodb.txt",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/6bac32d4-973b-4ba8-ad8a-8a9df3463bbc/resourceGroups/trainingAnalyticsInAzure/providers/Microsoft.Storage/storageAccounts/trainingdatainazure",
+			"events": [
+				"Microsoft.Storage.BlobCreated",
+				"Microsoft.Storage.BlobDeleted"
+			]
+		}
+	}
+}
