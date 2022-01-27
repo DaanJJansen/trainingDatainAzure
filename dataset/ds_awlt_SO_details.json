@@ -59,7 +59,10 @@
 		],
 		"typeProperties": {
 			"schema": "SalesLT",
-			"table": "SalesOrderDetail"
+			"table": {
+				"value": "variables(tablename)",
+				"type": "Expression"
+			}
 		}
 	}
 }
