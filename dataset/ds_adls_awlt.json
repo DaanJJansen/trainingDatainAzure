@@ -20,7 +20,7 @@
 					"type": "Expression"
 				},
 				"folderPath": {
-					"value": "@concat(\n    formatDateTime(utcnow(), 'yyyy'),\n    '/',\n    formatDateTime(utcnow(), 'MM'),\n    '/',\n    formatDateTime(utcnow(), 'dd')\n)",
+					"value": "@formatDateTime(utcnow(), 'yyyy-MM-dd')",
 					"type": "Expression"
 				},
 				"container": "stg"
