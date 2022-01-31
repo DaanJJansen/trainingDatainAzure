@@ -1,0 +1,32 @@
+{
+	"name": "ds_awlt",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSqlDatabase1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schema": {
+				"type": "string",
+				"defaultValue": "SalesLT"
+			},
+			"tabel": {
+				"type": "string",
+				"defaultValue": "Address"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().schema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().tabel",
+				"type": "Expression"
+			}
+		}
+	}
+}
