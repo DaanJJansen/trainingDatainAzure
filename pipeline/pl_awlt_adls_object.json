@@ -21,11 +21,17 @@
 						"storedProcedureParameters": {
 							"lastModified": {
 								"type": "DateTime",
-								"value": "2007-01-01T12:23:45"
+								"value": {
+									"value": "@utcnow()",
+									"type": "Expression"
+								}
 							},
 							"TableName": {
 								"type": "String",
-								"value": "@pipeline().parameters.table"
+								"value": {
+									"value": "@pipeline().parameters.table",
+									"type": "Expression"
+								}
 							}
 						},
 						"queryTimeout": "02:00:00",
