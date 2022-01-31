@@ -21,10 +21,7 @@
 						"storedProcedureParameters": {
 							"lastModified": {
 								"type": "DateTime",
-								"value": {
-									"value": "@utcnow()",
-									"type": "Expression"
-								}
+								"value": "2022-01-01T00:00:00"
 							},
 							"TableName": {
 								"type": "String",
