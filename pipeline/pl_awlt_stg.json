@@ -23,9 +23,58 @@
 					},
 					"dataset": {
 						"referenceName": "ds_awlt",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"schema": "SalesLT",
+							"tabel": "Address"
+						}
 					},
 					"firstRowOnly": false
+				}
+			},
+			{
+				"name": "fe_all_tables",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "lkp_all_tables",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('lkp_all_tables').output.value",
+						"type": "Expression"
+					},
+					"isSequential": false,
+					"activities": [
+						{
+							"name": "exe_awlt_adls_object",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "pl_awlt_adls_object",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true,
+								"parameters": {
+									"schema": {
+										"value": "@item().schema_name",
+										"type": "Expression"
+									},
+									"table": {
+										"value": "@item().table_name",
+										"type": "Expression"
+									}
+								}
+							}
+						}
+					]
 				}
 			}
 		],
