@@ -21,7 +21,10 @@
 						"storedProcedureParameters": {
 							"lastModified": {
 								"type": "DateTime",
-								"value": "2022-01-01T00:00:00"
+								"value": {
+									"value": "@adddays(utcnow(),-1)",
+									"type": "Expression"
+								}
 							},
 							"TableName": {
 								"type": "String",
